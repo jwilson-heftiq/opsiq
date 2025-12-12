@@ -1,7 +1,6 @@
 from __future__ import annotations
+
 """Tenant domain model."""
-
-
 from dataclasses import dataclass
 
 

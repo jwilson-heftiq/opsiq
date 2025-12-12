@@ -17,7 +17,9 @@ DOMAIN_DIRS = [
     Path("platform_core") / "domain",
 ]
 
-IMPORT_RE = re.compile(r"^\s*import\s+([a-zA-Z0-9_\.]+)|^\s*from\s+([a-zA-Z0-9_\.]+)\s+import", re.M)
+IMPORT_RE = re.compile(
+    r"^\s*import\s+([a-zA-Z0-9_\.]+)|^\s*from\s+([a-zA-Z0-9_\.]+)\s+import", re.M
+)
 
 def test_domain_has_no_forbidden_imports():
     violations = []

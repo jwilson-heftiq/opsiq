@@ -24,10 +24,10 @@ router = APIRouter()
 def get_retention_summary(tenant_id: str):
     """
     Get retention summary for a tenant.
-    
+
     Args:
         tenant_id: The tenant ID
-    
+
     Returns:
         RetentionSummaryDTO with retention metrics
     """

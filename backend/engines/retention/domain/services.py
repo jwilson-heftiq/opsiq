@@ -1,23 +1,25 @@
 from __future__ import annotations
+
 """Retention domain services."""
+from collections.abc import Iterable
 from datetime import datetime, timedelta, timezone
-from typing import List, Iterable
+
 import pandas as pd
 
-from .models import ShopperTripSummary, RetentionSummary
+from .models import RetentionSummary, ShopperTripSummary
 
 
 class RetentionService:
     """
     Pure domain logic: given trip events, compute simple summary stats.
     """
-    
+
     def compute_trip_summaries(
         self,
         trips_df: pd.DataFrame,
         now: datetime | None = None,
         lookback_days: int = 30
-    ) -> List[ShopperTripSummary]:
+    ) -> list[ShopperTripSummary]:
         now = now or datetime.now(timezone.utc)
         cutoff = now - timedelta(days=lookback_days)
 
@@ -41,8 +43,6 @@ class RetentionService:
             for _, row in grouped.iterrows()
         ]
 
-        
-    
     def compute_retention_summary(
         self,
         summaries: Iterable[ShopperTripSummary]
@@ -50,7 +50,7 @@ class RetentionService:
         summaries_list = list(summaries)
         total_shoppers = len(summaries_list)
         total_trips = sum(s.trip_count_last_30_days for s in summaries_list)
-        
+
         return RetentionSummary(
             total_shoppers=total_shoppers,
             total_trips_last_30_days=total_trips

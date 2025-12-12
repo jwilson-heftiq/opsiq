@@ -1,7 +1,7 @@
 from __future__ import annotations
+
 """Retention domain models."""
 from dataclasses import dataclass
-
 
 
 @dataclass

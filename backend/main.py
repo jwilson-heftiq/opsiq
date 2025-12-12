@@ -1,6 +1,7 @@
 """FastAPI application entry point."""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from engines.retention.api.router import router as retention_router
 
 app = FastAPI(title="OpsIQ", version="0.1.0")

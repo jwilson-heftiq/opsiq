@@ -1,13 +1,13 @@
 from __future__ import annotations
+
 """Stubbed Databricks client for development."""
-import pandas as pd
 import os
-
-
-
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, Optional
+from typing import Any
+
+import pandas as pd
+
 
 @dataclass
 class DatabricksConfig:
@@ -15,24 +15,25 @@ class DatabricksConfig:
     http_path: str
     access_token: str
 
+
 class DatabricksClient:
     """
     Minimal Databricks client for the walking skeleton.
     For now this can be a stub that returns static data.
     """
 
-    def __init__(self, config: Optional[DatabricksConfig] = None):
+    def __init__(self, config: DatabricksConfig | None = None):
         # In the skeleton we can make these optional /  env-based
         self._config = config or DatabricksConfig(
             sql_endpoint=os.getenv("DBX_SQL_ENDPOINT", "dummy"),
             http_path=os.getenv("DBX_HTTP_PATH", "dummy"),
             access_token=os.getenv("DBX_ACCESS_TOKEN", "dummy"),
         )
-    
-    def query_df(self, sql: str, params: Optional[Dict[str, Any]] = None) -> pd.DataFrame:
+
+    def query_df(self, sql: str, params: dict[str, Any] | None = None) -> pd.DataFrame:
         """
         Execute a SQL query and return results as a pandas DataFrame.
-        
+
         For now, returns hardcoded sample data with columns:
         - tenant_id: str
         - shopper_id: str

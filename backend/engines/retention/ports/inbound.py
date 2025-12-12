@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
@@ -12,7 +13,7 @@ class RetentionSummaryDTO:
 
 class RetentionQueryPort(ABC):
     """Port for querying retention summaries."""
-    
+
     @abstractmethod
     def get_summary(self, tenant_id: str) -> RetentionSummaryDTO:
         """
