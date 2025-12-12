@@ -1,0 +1,10 @@
+# Ruff configuration for backend
+# Allow __future__ imports and docstrings before regular imports (standard Python practice)
+
+line-length = 100
+
+[lint]
+# Allow module-level imports after __future__ imports and docstrings
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E402"]  # Module level import not at top of file (allows __future__ and docstrings)
+

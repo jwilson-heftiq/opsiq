@@ -1,7 +1,7 @@
 from __future__ import annotations
 """Retention domain services."""
 from datetime import datetime, timedelta, timezone
-from typing import List, Optional, Iterable
+from typing import List, Iterable
 import pandas as pd
 
 from .models import ShopperTripSummary, RetentionSummary
