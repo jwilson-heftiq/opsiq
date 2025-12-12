@@ -13,8 +13,8 @@ FORBIDDEN = [
 ]
 
 DOMAIN_DIRS = [
-    Path("backend/engines") / "retention" / "domain",
-    Path("backend/platform_core") / "domain",
+    Path("engines") / "retention" / "domain",
+    Path("platform_core") / "domain",
 ]
 
 IMPORT_RE = re.compile(r"^\s*import\s+([a-zA-Z0-9_\.]+)|^\s*from\s+([a-zA-Z0-9_\.]+)\s+import", re.M)
