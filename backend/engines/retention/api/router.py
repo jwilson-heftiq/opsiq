@@ -1,14 +1,12 @@
 from __future__ import annotations
-"""FastAPI router for retention engine."""
+
 from fastapi import APIRouter, HTTPException
 
-from engines.retention.ports.inbound import RetentionSummaryDTO
-
-# Simple dependency injection with global instances
-from platform_core.adapters.inmemory_tenant_resolver import InMemoryTenantResolver
-from shared.infra.dbx_client import DatabricksClient
 from engines.retention.adapters.dbx_shopper_events_adapter import DatabricksShopperEventsAdapter
 from engines.retention.adapters.retention_query_service import RetentionQueryService
+from engines.retention.ports.inbound import RetentionSummaryDTO
+from platform_core.adapters.inmemory_tenant_resolver import InMemoryTenantResolver
+from shared.infra.dbx_client import DatabricksClient
 
 # Initialize dependencies
 _tenant_resolver = InMemoryTenantResolver()
