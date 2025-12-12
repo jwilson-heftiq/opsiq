@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///app/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div className=\"max-w-2xl\">\n      <h2 className=\"text-2xl font-semibold text-gray-800 mb-4\">\n        OpsIQ Walking Skeleton\n      </h2>\n      <p className=\"text-gray-600\">\n        Try navigating to <code className=\"bg-gray-200 px-2 py-1 rounded\">/tenants/[tenantId]/retention</code> to view retention metrics.\n      </p>\n    </div>\n  )\n}\n\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAG,WAAU;0BAA4C;;;;;;0BAG1D,8OAAC;gBAAE,WAAU;;oBAAgB;kCACT,8OAAC;wBAAK,WAAU;kCAAgC;;;;;;oBAAoC;;;;;;;;;;;;;AAI9G"}}]
-}
